@@ -1,0 +1,6 @@
+Txn_ID,Customer_Name,Amount,Payment_Method
+1001,Alex Gonzales,12500.0,Credit Card
+1002,Bea Alonzo,4500.0,GCash
+1003,Coco Martin,6700.0,Maya
+1004,Dingdong Dantes,8900.0,Cash
+1005,Coco Martin,3200.0,Maya
