@@ -16,14 +16,13 @@ reviews = pd.DataFrame({
     'Verified': [True, True, False, True, True, True]
 })
 
-# 1. Impute missing Rating using MEDIAN (direct re-assignment, walang inplace)
+
 median_val = reviews['Rating'].median()
 reviews['Rating'] = reviews['Rating'].fillna(median_val)
-# 2. Merge 'reviews' at 'products' gamit ang 'ProdID' (inner join)
 merge_df = pd.merge(reviews, products, on='ProdID', how='inner')
-# 3. Filter lang ang mga reviews na 'Verified' == True
+
 filterz = merge_df[merge_df['Verified'] == True]
-# 4. Group by 'Category' at kuhanin ang Mean Price at Mean Rating
+
 average = filterz.groupby('Category')[['Price', 'Rating']].mean().reset_index()
 
 print("--- CLEANED & MERGED REVIEWS ---")
